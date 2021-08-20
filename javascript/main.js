@@ -17,8 +17,8 @@ buttonSetup.addEventListener('click', function() {
 buttonSubmit.addEventListener('click', function() {
     let n1 = document.getElementById('name1').value;
     let n2 = document.getElementById('name2').value;
-    let b1 = document.getElementById('bot1').checked;
-    let b2 = document.getElementById('bot2').checked;
+    // let b1 = document.getElementById('bot1').checked;
+    // let b2 = document.getElementById('bot2').checked;
     
     const form = new FormData(document.getElementById('name-prompt'));
     if (n1 != null) players[0].name = n1;
@@ -27,11 +27,11 @@ buttonSubmit.addEventListener('click', function() {
     // players[1].name = form.get('name2');
     
 
-    players[0].isBot = b1;
-    players[1].isBot = b2;
+    // players[0].isBot = b1;
+    // players[1].isBot = b2;
 
     console.log("It's " + players[0].name + " vs " + players[1].name +"!");
-    console.log("It's " + ((players[0].isBot) ? "bot" : "human") + " vs " + ((players[1].isBot) ? "bot" : "human") +"!");
+    // console.log("It's " + ((players[0].isBot) ? "bot" : "human") + " vs " + ((players[1].isBot) ? "bot" : "human") +"!");
 
     // document.getElementById("name-prompt").reset(); 
     overlay.style.display = "none";
@@ -75,6 +75,7 @@ const GameManager = (function(){
     const title = document.getElementById('title');
     const defaultTitle = title.innerHTML;
 
+    // let turns = ['X', 'O'];
     let turns = ['X', 'O'];
     let currentTurnIndex = 0;
 
@@ -173,9 +174,8 @@ const GameManager = (function(){
 
 //TODO Player factory
 const Player = (name, piece, isBot = false) => {
-    const getPiece = () => piece;
-
-    return {name, isBot, getPiece};
+    // const getPiece = () => piece;
+    return {name, isBot};
 };
 
 //MAIN
