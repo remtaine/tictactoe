@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>INSERT_TITLE_HERE</title>
+    <title>Tic-Tac-Toe</title>
 
-    <meta property="og:title" content="XXXXX">
+    <meta property="og:title" content="Tic-Tac-Toe">
     <meta property="og:description" content="Project I made for The Odin Project">
     <meta property="og:image" content="images/screenshot.png">
-    <meta property="og:url" content="https://remtaine.github.io/XXXXX/">
+    <meta property="og:url" content="https://remtaine.github.io/tictactoe/">
     <meta name="twitter:card" content="images/screenshot.png">
 
-    <meta property="og:site_name" content="XXXXX">
-    <meta name="twitter:image:alt" content="XXXXX made using HTML, CSS, and Javascript">
+    <meta property="og:site_name" content="Tic-Tac-Toe">
+    <meta name="twitter:image:alt" content="Tic-Tac-Toe made using HTML, CSS, and Javascript">
 
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.jpg"/>
     <script src="javascript/main.js" defer></script>
 
     <!-- svg icons -->
@@ -24,13 +24,75 @@
     <script src="https://kit.fontawesome.com/d8f0c855f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-    </nav>
+    <div id="overlay">
+        <form id="name-prompt">
+            <label for="name1">Player 1: </label>
+            <input type="text" id="name1" name="prompt-name1" size="10">
+
+            <div class="form-div">
+                <label for="bot1">Is Bot? </label>
+                <input type="checkbox" id="bot1" name="prompt-bot1" size="10">
+            </div>
+
+            <label for="name2">Player 2: </label>
+            <input type="text" id="name2" name="prompt-name2" size="10">
+            <div class="form-div">
+                <label for="bot2">Is Bot? </label>
+                <input type="checkbox" id="bot2" name="prompt-bot2" size="10">
+            </div>
+            <input type="button" id="submit" value="Submit">
+        </form>
+    </div> 
+    <header>
+        <h1 id="title">Tic-Tac-Toe</h1>
+        <!-- <button>Play as X</button>
+        <button>Play as O</button> -->
+        <!-- <form id="name-prompt">
+            <div>
+            <label for="name1">Player 1: </label>
+            <input type="text" id="name1" name="prompt-name1" size="10">
+            </div>
+            
+            <div>
+            <label for="name2">Player 2: </label>
+            <input type="text" id="name2" name="prompt-name2" size="10">
+            </div>
+            
+            <input type="button" id="submit" value="Submit">
+        </form> -->
+
+        <button id="setup">Setup</button>
+        <button id="restart">Restart</button>
+        <div class="design-line"></div>
+    </header>
 
     <main>
+        <section id="game-grid">
+            <!-- <button class="game-square filled">O</button>
+            <button class="game-square filled">X</button>
+            <button class="game-square"></button>
+            <button class="game-square filled">X</button>
+            <button class="game-square filled">O</button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square filled">X</button>
+            <button class="game-square filled">X</button> -->
+
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+            <button class="game-square"></button>
+
+        </section>
     </main>
     
     <footer>
+        Made by <a href="https://github.com/remtaine">Ben</a>
     </footer>
 </body>
 </html>
