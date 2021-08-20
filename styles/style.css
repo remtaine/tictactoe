@@ -1,0 +1,264 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--color1);
+}
+
+html {
+    --color1: #00303b;
+    --color2: #ff7777;
+    --color3: #ffce96;
+    --color4: #f1f2da;
+    --duration: 0.4s;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--color4);
+    color: var(--color1);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    justify-content: center;
+    align-items: center;
+}
+
+#name-prompt {
+    width: auto;
+    height: auto;
+    background-color: var(--color2);
+    border-color: var(--color5);
+    border-style: dotted;
+    border-width: 0px;
+    border-radius: 30px;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    width: 55vw;
+    height: 100%;
+    background-color: var(--color2);
+    padding: 25px 0;
+}
+
+main {
+    --square-side: 70vmin;
+    /* width: 50vw; */
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    width: var(--square-side);
+    height: var(--square-side);
+    min-width: 350px;
+    min-height: 350px;
+    background-color: var(--color4);
+    box-shadow: 10px 10px 0 0 var(--color3);
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+}
+
+#name1, #name2 {
+    border-radius: 10px;
+    border-style: none;
+    overflow: hidden;
+    background-color: var(--color4);
+    text-align: center;
+}
+
+#bot1, #bot2 {
+    --side: ;
+    appearance: none;
+    background-color: var(--color4);
+    border: 2px solid var(--color1);
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#bot1:checked, #bot2:checked {
+    border-width: 5px;
+    background-color: var(--color1);
+    border-color: var(--color4);
+}
+/* #bot1:checked::after, #bot2:checked::after {
+    content: '/';
+    font-size: 1rem;
+    text-align: center;
+} */
+
+h1 {
+    padding: 0 0 10px 0;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    /* position: absolute; */
+    /* bottom: 10px; */
+    text-align: center;
+}
+
+footer a, footer a:active {
+    text-decoration: none;
+    padding: 0;
+    color: var(--buttons);
+    border-bottom: 2px dotted;
+}
+
+footer a:hover {
+    border-bottom: 3px dotted;
+}
+
+.design-line {
+    padding: 0;
+    margin: 1rem 0 0 0;
+    width: 0;
+    border-top-width: 5px;
+    border-color: var(--color3);
+    border-style: double;
+    width: 50vw;
+}
+
+#game-grid {
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    line-height: 5rem;
+}
+
+button, #submit {
+    border-radius: 10px;
+    background-color: var(--color4);
+    color: var(--color1);
+    border-style: solid;
+    transition: background-color var(--duration) ease;
+}
+
+#submit {
+    padding: 5px 10px;
+    border-style: none;
+}
+
+header button {
+    margin: 10px 5px 0 5px;
+    padding: 5px 10px;
+    border-width: 0;
+}
+.game-square {
+    --shadow-size: 6px;
+    --square-side: 100%;
+
+    border-style: solid;
+    border-width: 4px;
+    border-color: var(--color1);
+
+    box-shadow: var(--shadow-size) var(--shadow-size) 0 0 var(--color3);
+    width: var(--square-side);
+    height: var(--square-side);
+    font-size: 3.5rem;
+}
+
+@media screen and (min-width: 480px) and (min-height: 480px) {
+    .game-square {
+        /* font-size: 3.5rem; */
+        /* --shadow-size: 6px; */
+    }
+}
+
+@media screen and (min-width: 600px) and (min-height: 600px) {
+    .game-square {
+        font-size: 4.5rem;
+        /* --shadow-size: 8px; */
+        /* box-shadow: 6px 6px 0 0 var(--color3); */
+    }
+}
+
+@media screen and (min-width: 768px) and (min-height: 768px) {
+    .game-square {
+        font-size: 6rem;
+        --shadow-size: 10px;
+    }
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+    .game-square {
+        font-size: 7rem;
+        /* --shadow-size: 10px; */
+    }
+}
+
+/* @media screen and (min-width: 1281px) {
+    .game-square {
+        font-size: 6rem;
+    }
+} */
+
+button:hover:not(.filled), button.done, #submit:hover {
+    background-color: var(--color3);
+}
+
+button.win {
+    background-color: var(--color2);
+}
+
+/* .game-square h2 {
+    font-size: 5rem;
+    width: 100%;
+    height: 100%;
+} */
